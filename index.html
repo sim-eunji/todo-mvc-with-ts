@@ -12,27 +12,33 @@
 <body>
   <div>
     <header>
-      <h2 class="container">검색</h2>
+      <h2 class="container">투두리스트</h2>
     </header>
 
     <div class="container">
       <form>
-        <input type="text" placeholder="검색어를 입력하세요" autofocus>
+        <input id="todo-input" type="text" placeholder="할일을 입력하세요" autofocus>
         <button type="reset" class="btn-reset"></button>
       </form>
 
       <div class="content">
-        <ul id="tabs" class="tabs">
-          <li>추천 검색어</li>
-          <li>최근 검색어</li>
+        <ul id="todo-list">
+          <li class="empty">
+            Todo is not found.
+          </li>
         </ul>
-        <div id="search-keyword"></div>
-        <div id="search-history"></div>
-        <div id="search-result"></div>
       </div>
+
+      <small id="todo-stat"></small>
+
     </div>
+
   </div>
-  <script type="module" src="./src/index.ts"></script>
+  <script type="text/javascript" src="./node_modules/systemjs/dist/system.js"></script>
+  <script type="text/javascript" src="./dist/bundle.js"></script>
+  <script type="text/javascript">
+    System.import('app');
+  </script>
 </body>
 
 </html>
